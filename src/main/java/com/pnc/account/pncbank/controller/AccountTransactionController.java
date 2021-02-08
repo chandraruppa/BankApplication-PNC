@@ -15,6 +15,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 
+
+/**
+ * @author c.ruppa
+ * @Description: Purpose of this Class is to get the transactionList for a specified date range & get the transactionList for a given transactionType
+ *  and also create transactions for a given account
+ */
+
 @CrossOrigin
 @RestController
 public class AccountTransactionController {
