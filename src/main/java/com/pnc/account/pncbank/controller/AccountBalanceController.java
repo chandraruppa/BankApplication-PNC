@@ -44,4 +44,9 @@ public class AccountBalanceController {
         return new ResponseEntity<>(accountResponse, HttpStatus.OK);
     }
 
+    @GetMapping("/getAccountList")
+    public ResponseEntity<Object> getAllAccounts(){
+        return new ResponseEntity<>(accountBalanceService.getAccountList(), HttpStatus.OK);
+    }
+
 }

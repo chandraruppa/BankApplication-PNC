@@ -16,4 +16,9 @@ public class AccountTransactionRequest {
     private String transactionType;
     private Double transactionAmount;
 
+    public AccountTransactionRequest(@NotNull(message = "accountNumber should not be null") @Min(value = 100000, message = "accountNumber should be six digit number") @Max(value = 999999, message = "accountNumber should be six digit number") Integer accountNumber, String transactionType, Double transactionAmount) {
+        this.accountNumber = accountNumber;
+        this.transactionType = transactionType;
+        this.transactionAmount = transactionAmount;
+    }
 }

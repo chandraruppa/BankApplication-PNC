@@ -7,7 +7,9 @@ import com.pnc.account.pncbank.repository.AccountBalanceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class AccountBalanceService {
@@ -50,5 +52,15 @@ public class AccountBalanceService {
         return accountBalanceEntity;
     }
 
+    public List<AccountBalanceEntity> getAccountList(){
+        List<AccountBalanceEntity> accountBalanceEntitiesList = new ArrayList<>();
+        try{
+         accountBalanceRepository.findAll().forEach(accountBalanceEntities -> accountBalanceEntitiesList.add(accountBalanceEntities));
+        } catch (Exception exception){
+            exception.printStackTrace();
+            System.out.println(" Exception occurred during processing getAccountList method and Exception is :"+exception.getMessage());
+        }
+        return accountBalanceEntitiesList;
+    }
 
 }
